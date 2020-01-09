@@ -2,7 +2,7 @@
 const express = require('express');
 
 // get movie controller
-const movieCtrl = require('../controller/movie-ctrl');
+const movieCtrl = require('../controllers/movie-ctrl');
 
 // create router from express
 const router = express.Router();
@@ -26,3 +26,5 @@ router.get('/movie/:id', movieCtrl.getMovieById);
 // create route on getting all movies. Method get, path '/movies', ctrl
 // method getMovies
 router.get('/movies', movieCtrl.getMovies);
+
+module.exports = router;
