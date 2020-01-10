@@ -35,13 +35,13 @@ const createMovie = (req, res) => {
                 id: movie._id,
                 message: 'Movie created!'
             })
+        })
         .catch(err => {
             return res.status(400).json({
                 error: err,
                 message: 'Movie not created'
             })
         })
-    })
 };
 
 const updateMovie = async (req, res) => {
@@ -144,8 +144,9 @@ const getMovieById = async (req, res) => {
         // if movie does not found return response with code 404 and json
         // that contains options success is true and error with custom message
         if (!movie) {
-            return res.status(404).json({ 
-                success: false, error: 'Movie not found'
+            return res.status(404).json({
+                success: false,
+                error: 'Movie not found'
             });
         }
 
@@ -174,7 +175,8 @@ const getMovies = async (req, res) => {
         // options success that is false and error is custom message
         if (!movies.length) {
             return res.status(404).json({ 
-                success: false, error: 'Movies not found'
+                success: false,
+                error: 'Movies not found'
             });
         }
 
